@@ -1,10 +1,10 @@
 # SceneLuminance
 An unreal-plugin that lets the user sample scene-cubemaps on the CPU. Made specifically for virtual video production in combination with DMX lights, but can be used for other things as well.
 
-Only tested in Unreal 5.4. 
-WARNING: Might only work in PIE. 
+- Only tested in Unreal 5.4. 
+- WARNING: Might only work in PIE. 
 
-Might work extra well in combination with: 
+This plugin is only reading the "ambient light" (color) from the surrounding scene. It does not consider light coming directly from a lightsource. That's why this plugin might work extra well in combination with: 
 https://github.com/zurra/LXR-Free
 
 # Setup
@@ -25,10 +25,10 @@ Top left - The blurred luminance-values in all directions relative to the camera
 Bottom left - The scene-capture and a red dot representing the uv-coordinate of the current camera direciton.
 
 # How it works
-The scene is rendered to a CubeRenderTarget. This TextureCube only exists on the GPU and has to be copied to the CPU in order for us to read it. A TextureCube has 6 textures, one for each side of the cube. Each texture is coped in a TArray<FLinearColor> using FRenderTarget::ReadLinearColorPixels(). 
+The scene is rendered to a ```CubeRenderTarget```. This ```TextureCube``` only exists on the GPU and has to be copied to the CPU in order for us to read it. A TextureCube has 6 textures, one for each side of the cube. Each texture is coped in a ```TArray<FLinearColor>``` using ```FRenderTarget::ReadLinearColorPixels()```. 
 
 The tricky part is mapping the sample direction (in 3D) to the correct cube face and face UV. My solution was inspired by this, but in reverse: https://stackoverflow.com/a/34427087
 
 # Future work
-Copying the pixels to CPU should not be done on the game thread, but I found no other way that was thread-safe.
-Investigate the math behind luminance and ambient lighting further. 
+- Copying the pixels to CPU should not be done on the game thread, but I found no other way that was thread-safe.
+- Investigate the math behind luminance and ambient lighting further. 
