@@ -18,7 +18,7 @@ https://dev.epicgames.com/documentation/en-us/unreal-engine/plugins-in-unreal-en
 4. Press play!
 
 # Demo
-Place the BP_LuminanceSampleTest-pawn in your scene. 
+Place the ```BP_LuminanceSampleTest```-pawn in your scene. 
 
 When entering play-mode, a debug-widget will be added to the screen:
 Top left - The blurred luminance-values in all directions relative to the camera
