@@ -4,6 +4,9 @@ An unreal-plugin that lets the user sample scene-cubemaps on the CPU. Made speci
 Only tested in Unreal 5.4. 
 WARNING: Might only work in PIE. 
 
+Might work extra well in combination with: 
+https://github.com/zurra/LXR-Free
+
 # Setup
 Install the plugin like any other:
 https://dev.epicgames.com/documentation/en-us/unreal-engine/plugins-in-unreal-engine
