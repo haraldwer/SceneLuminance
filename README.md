@@ -24,7 +24,7 @@ When entering play-mode, a debug-widget will be added to the screen:
 - Top left - The blurred luminance-values in all directions relative to the camera
 - Bottom left - The scene-capture and a red dot representing the uv-coordinate of the current camera direciton.
 
-[<img src="screenshot.png">]
+[<img src="screenshot.png">]()
 
 # How it works
 The scene is rendered to a ```CubeRenderTarget```. This ```TextureCube``` only exists on the GPU and has to be copied to the CPU in order for us to read it. A TextureCube has 6 textures, one for each side of the cube. Each texture is coped in a ```TArray<FLinearColor>``` using ```FRenderTarget::ReadLinearColorPixels()```. 
